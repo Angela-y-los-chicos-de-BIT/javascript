@@ -25,15 +25,22 @@
 
 // Version 1
 
-const nums = [ 1, 2, 1, 1, 3, 2 ];
+const nums = [ 1, 2, 9, 1, 9, 2, 0, 1 ];
 const checkList = {};
 let newList = [];
 
-for ( const value of nums ) {
-    if( ! checkList[ value ] ) {
-        checkList[ value ] = true;
-        newList = [ ...newList, value ];
-    }
-}
+// for ( const value of nums ) {
+//     if( ! checkList[ value ] ) {
+//         checkList[ value ] = true;
+//         newList = [ ...newList, value ];
+//     }
+// }
 
-console.log( newList );
+// console.log( newList );
+
+const numsNoRepetidos = nums.filter( function( value, index ) {
+    return nums.indexOf( value ) === index;
+} );
+
+console.log( numsNoRepetidos );
+console.log( 'Este si es' );
